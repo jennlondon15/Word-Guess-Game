@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Broadway Hangman</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="./assests/css/main.css" />
+  </head>
+  <body>
+    <!-- Main Body -->
+    <div id="app">
+      <!-- Main Card -->
+      <header>
+        <h1>Broadway Hangman</h1>
+      </header>
+      <!-- Wrapper for User State -->
+      <div id="blocks">
+        <div id="win">
+          Wins:
+        </div>
+        <div id="remaining">
+          Remaining:
+        </div>
+        <div id="incorrect">
+          Incorrect:
+        </div>
+      </div>
+      <!-- End User State Wrapper/Main Card -->
+      <!-- Game Display -->
+      <div id="game">
+        Press any Key to Begin
+      </div>
+      <!-- Win/Lose Modal -->
+      <div data-modal="trigger-1" class="modal">
+        <article class="content-wrapper">
+          <button class="close"></button>
+          <header class="modal-header">
+            <h2 id="game-status"></h2>
+          </header>
+          <div class="content">
+            <p id="complete-word"></p>
+          </div>
+          <footer class="modal-footer">
+            <button class="action">Play Again?</button>
+          </footer>
+        </article>
+      </div>
+      <!-- End Win/Lose Modal -->
+      <footer>
+        <span>Jennifer London | &copy; 2019</span>
+      </footer>
+    </div>
+    <!-- End Main Body -->
+    <script src="./assests/javascript/game.js"></script>
+  </body>
+</html>
