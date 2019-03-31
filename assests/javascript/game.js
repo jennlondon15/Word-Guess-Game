@@ -57,7 +57,7 @@ const gameController = {
       }
     },
     restart() {
-      gameController.state.wins = '';
+      gameController.state.wins = 0;
       gameController.state.incorrect = '';
       gameController.state.remaining = '';
       gameController.state.loadWin = true;
