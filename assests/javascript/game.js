@@ -16,7 +16,7 @@ const gameController = {
     'The Lion King',
     'Wicked',
     'Phantom of the Opera',
-    'Mama Mia',
+    'Mamma Mia',
     'Chicago',
     'Jersey Boys',
     'Book of Mormon',
@@ -34,7 +34,7 @@ const gameController = {
 
       document.getElementById('game-status').innerHTML = `${outcome}`;
       document.getElementById(
-        'complete-word'
+        'complete-word',
       ).innerHTML = `The word was: ${word}`;
 
       modal.classList.add('open');
@@ -105,7 +105,7 @@ const gameController = {
           gameController.state.outcome = 'lose';
           gameController.functions.openModal(
             `Oh No! You didn't guess the word 😭`,
-            gameController.selectedWord
+            gameController.selectedWord,
           );
         }
       }
@@ -118,7 +118,7 @@ const gameController = {
     },
     checkforWin(letters) {
       const res = Array.from(letters).every(item =>
-        gameController.functions.isUnderScore(item)
+        gameController.functions.isUnderScore(item),
       );
 
       if (gameController.state.loadWin) {
@@ -126,7 +126,7 @@ const gameController = {
           gameController.state.outcome = 'win';
           gameController.functions.openModal(
             '🤘Great Job!! You guessed the word 🤘',
-            gameController.selectedWord
+            gameController.selectedWord,
           );
           gameController.state.wins += 1;
           gameController.functions.generateLayout();
@@ -147,10 +147,10 @@ const gameController = {
       // * How const letterSpan works
       // variable name = body(dom).select select all HTML elements inside it with the attribute of data-letter that equals the "keyCode" that was triggered by the key press
       const letterSpan = document.querySelectorAll(
-        `[data-letter="${e.keyCode}"]`
+        `[data-letter="${e.keyCode}"]`,
       );
       const allLetters = document.querySelectorAll(
-        `span.letters:not([data-letter="32"])`
+        `span.letters:not([data-letter="32"])`,
       );
       // ? letterSpan and all Letters will return a object named NodeList - It is not an array at this time.
 
@@ -161,7 +161,7 @@ const gameController = {
       //  * We need to select the underscore ("_") from the elements.
       // First we need to make an array from our NodeList that was returned from letterSpan. Then we need to iterate through it and update their innerHTML to equal their real text value. (converts keyCode to Letter)
       Array.from(letterSpan).map(
-        items => (items.innerHTML = `${String.fromCharCode(e.keyCode)}`)
+        items => (items.innerHTML = `${String.fromCharCode(e.keyCode)}`),
       );
 
       gameController.functions.checkforWin(allLetters);
